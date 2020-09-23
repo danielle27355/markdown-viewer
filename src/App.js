@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.css';
-import Badge from "react-bootstrap/Badge";
-import { findByLabelText, render } from '@testing-library/react';
 let marked = require("marked");
 
 export default class App extends React.Component {
@@ -32,7 +30,6 @@ export default class App extends React.Component {
               <div className="input">
                 <textarea 
                   className="input" 
-                  // style={inputStyle} 
                   value={this.state.markdown}
                   onChange ={(e) => {
                     this.updateMarkdown(e.target.value);
@@ -45,7 +42,6 @@ export default class App extends React.Component {
                 Output
               </h2>
               <div className="output"
-                // style={outputStyle}
                 dangerouslySetInnerHTML={{
                   __html: marked(this.state.markdown),
                 }}
